@@ -240,10 +240,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Snake
       objectReference: {fileID: 0}
-    - target: {fileID: 3829941053145464955, guid: 1c1ec789dc6a17c498fd07e3fb32b879, type: 3}
-      propertyPath: m_IsTrigger
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1c1ec789dc6a17c498fd07e3fb32b879, type: 3}
 --- !u!1001 &2413301081953638011
@@ -407,34 +403,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 3256164779796904034, guid: 0f31e4a715b31de4196ffa5d102f65c0, type: 3}
-      propertyPath: InitialModule.startColor.maxColor.b
-      value: 0.9150943
-      objectReference: {fileID: 0}
-    - target: {fileID: 3256164779796904034, guid: 0f31e4a715b31de4196ffa5d102f65c0, type: 3}
-      propertyPath: InitialModule.startColor.maxColor.g
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3256164779796904034, guid: 0f31e4a715b31de4196ffa5d102f65c0, type: 3}
-      propertyPath: InitialModule.startColor.maxColor.r
-      value: 0.62223125
-      objectReference: {fileID: 0}
-    - target: {fileID: 3256164779796904034, guid: 0f31e4a715b31de4196ffa5d102f65c0, type: 3}
-      propertyPath: InitialModule.startColor.minColor.b
-      value: 0.7806493
-      objectReference: {fileID: 0}
-    - target: {fileID: 3256164779796904034, guid: 0f31e4a715b31de4196ffa5d102f65c0, type: 3}
-      propertyPath: InitialModule.startColor.minColor.g
-      value: 0.8584906
-      objectReference: {fileID: 0}
-    - target: {fileID: 3256164779796904034, guid: 0f31e4a715b31de4196ffa5d102f65c0, type: 3}
-      propertyPath: InitialModule.startColor.minColor.r
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3256164779796904034, guid: 0f31e4a715b31de4196ffa5d102f65c0, type: 3}
-      propertyPath: InitialModule.startColor.minMaxState
-      value: 2
-      objectReference: {fileID: 0}
     - target: {fileID: 3256164779796904035, guid: 0f31e4a715b31de4196ffa5d102f65c0, type: 3}
       propertyPath: m_RootOrder
       value: 7
@@ -482,10 +450,6 @@ PrefabInstance:
     - target: {fileID: 3256164779796904036, guid: 0f31e4a715b31de4196ffa5d102f65c0, type: 3}
       propertyPath: m_Name
       value: FX Game
-      objectReference: {fileID: 0}
-    - target: {fileID: 3256164779796904036, guid: 0f31e4a715b31de4196ffa5d102f65c0, type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0f31e4a715b31de4196ffa5d102f65c0, type: 3}
