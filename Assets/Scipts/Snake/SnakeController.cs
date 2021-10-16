@@ -1,4 +1,3 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -12,20 +11,17 @@ public class SnakeController : MonoBehaviour
     public int Gap;
     public int BodySpeed;
 
-    public SnakeController()
+    private void Awake()
     {
         BodyParts = new List<GameObject>();
         PositionHistory = new List<Vector3>();
-
-        Gap = 10;
-        BodySpeed = 5;
     }
 
     // Start is called before the first frame update
     void Start()
     {
-        // Start the snake body parts
-        GrowSnake();
+        Gap = 10;
+        BodySpeed = 5;
     }
 
     // Update is called once per frame
@@ -48,7 +44,7 @@ public class SnakeController : MonoBehaviour
 
             Vector3 MoveDirection = (Point - body.transform.position);
 
-            body.transform.position += MoveDirection * BodySpeed * Time.deltaTime;
+            body.transform.position += BodySpeed * Time.deltaTime * MoveDirection;
 
             body.transform.LookAt(Point);
 
@@ -59,7 +55,7 @@ public class SnakeController : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         // Add body parts when snake eat food
-        if (other.tag == "Food")
+        if (other.CompareTag("Food"))
         {
             GrowSnake();
         }

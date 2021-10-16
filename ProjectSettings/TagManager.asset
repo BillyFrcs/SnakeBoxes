@@ -8,6 +8,7 @@ TagManager:
   - Food
   - Obstacle
   - Sides
+  - Body
   layers:
   - Default
   - TransparentFX

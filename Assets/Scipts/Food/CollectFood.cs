@@ -1,16 +1,15 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class CollectFood : MonoBehaviour
 {
-    public CollectFood()
-    {
-    }
+    private SpawnFood _Food;
+
+    private bool _isAte = false;
 
     // Start is called before the first frame update
     void Start()
     {
+        _Food = FindObjectOfType(typeof (SpawnFood)) as SpawnFood;
     }
 
     // Update is called once per frame
@@ -18,10 +17,17 @@ public class CollectFood : MonoBehaviour
     {
     }
 
-    void OnTriggerEnter(Collider other)
+    private void OnTriggerEnter(Collider other)
     {
-        // Get the score when collide with food
-        ScoreSystem.Score++;
+        _isAte = true;
+
+        if (_isAte)
+        {
+            _Food.SpawnRandomFood();
+
+            // Get the score when collide with food
+            ScoreSystem.Score++;
+        }
 
         Destroy(gameObject);
     }
