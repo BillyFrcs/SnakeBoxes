@@ -32,7 +32,7 @@ public class SnakeCollider : MonoBehaviour
             SnakeController.BodyParts.Clear();
 
             // Reset game when crash with sides
-            Invoke("Reset", RestartDelay);
+            Invoke(nameof(Reset), RestartDelay);
         }
     }
 

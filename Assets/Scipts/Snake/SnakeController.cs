@@ -55,7 +55,7 @@ public class SnakeController : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         // Add body parts when snake eat food
-        if (other.CompareTag("Food"))
+        if (other.gameObject.CompareTag("Food"))
         {
             GrowSnake();
         }
