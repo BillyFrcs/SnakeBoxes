@@ -9,6 +9,7 @@ public class SnakeMovement : MonoBehaviour
     void Start()
     {
         SnakeSpeed = 5.0f;
+
         SteerSpeed = 180.0f;
     }
 

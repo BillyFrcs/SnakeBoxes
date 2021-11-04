@@ -17,7 +17,7 @@ public class CollectFood : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        ScoreSystem.Score++;
+        ScoreSystem.score++;
 
         Destroy(gameObject);
     }

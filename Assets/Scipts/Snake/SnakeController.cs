@@ -14,6 +14,7 @@ public class SnakeController : MonoBehaviour
     private void Awake()
     {
         BodyParts = new List<GameObject>();
+
         PositionHistory = new List<Vector3>();
     }
 

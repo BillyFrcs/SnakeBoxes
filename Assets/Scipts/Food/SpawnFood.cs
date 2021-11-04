@@ -1,9 +1,12 @@
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class SpawnFood : MonoBehaviour
 {
-    public GameObject FoodPrefab;
+    public List<GameObject> FoodPrefab = new List<GameObject>();
+
+    private GameObject _SpanwFood;
 
     public static SpawnFood InstanceSpawnFood;
 
@@ -14,6 +17,7 @@ public class SpawnFood : MonoBehaviour
     [SerializeField] private float _YPosition;
 
     private float _spawned = 0.5f;
+    private int _randomIndex;
 
     private void Awake()
     {
@@ -32,7 +36,7 @@ public class SpawnFood : MonoBehaviour
         _MinZ = 22.7f;
         _MaxZ = 2.1f;
 
-        _YPosition = 0.31f;
+        _YPosition = -0.16f;
 
         // Start spawned food
         Invoke(nameof(StartSpawning), _spawned);
@@ -61,7 +65,9 @@ public class SpawnFood : MonoBehaviour
         {
             if (Random.Range(0, 10) >= 2)
             {
-                Instantiate(FoodPrefab, new Vector3(randomAtPositionX, _YPosition, randomAtPositionZ), Quaternion.identity);
+                _randomIndex = Random.Range(0, FoodPrefab.Count);
+
+                _SpanwFood = Instantiate(FoodPrefab[_randomIndex], new Vector3(randomAtPositionX, _YPosition, randomAtPositionZ), Quaternion.identity);
             }
         }
 

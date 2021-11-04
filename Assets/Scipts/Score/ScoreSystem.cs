@@ -1,21 +1,29 @@
 using UnityEngine;
-using UnityEngine.UI;
+using TMPro;
 
 public class ScoreSystem : MonoBehaviour
 {
-    public GameObject ScoreGame;
+    [SerializeField] private TextMeshProUGUI _ScoreTPM;
 
-    public static int Score;
+    public GameObject Score;
+
+    public static ScoreSystem InstanceScoreSystem;
+
+    public static int score;
 
     // Start is called before the first frame update
     void Start()
     {    
+        if (InstanceScoreSystem == null)
+        {
+            InstanceScoreSystem = this;
+        }
     }
 
     // Update is called once per frame
     void Update()
     {
         // Update collect food score
-        ScoreGame.GetComponent<Text>().text = "Score: " + Score.ToString();
+        _ScoreTPM.text = "Your Score: " + score.ToString();
     }
 }

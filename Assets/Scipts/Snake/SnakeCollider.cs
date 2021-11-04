@@ -1,5 +1,4 @@
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public enum ResetScore
 {
@@ -8,13 +7,10 @@ public enum ResetScore
 
 public class SnakeCollider : MonoBehaviour
 {
-    [SerializeField]
-    private float RestartDelay;
-
     // Start is called before the first frame update
     void Start()
     {
-        RestartDelay = 1.0f;
+
     }
 
     // Update is called once per frame
@@ -28,22 +24,19 @@ public class SnakeCollider : MonoBehaviour
         if (collision.CompareTag("Player"))
         {
             Destroy(collision.gameObject);
-            
-            SnakeController.BodyParts.Clear();
 
-            // Reset game when crash with sides
-            Invoke(nameof(Reset), RestartDelay);
+            GameOver.InstanceGameover.DisplayGameOver.SetActive(true);
+
+            ScoreSystem.InstanceScoreSystem.Score.SetActive(false);
+
+            SnakeController.BodyParts.Clear();
         }
     }
 
     private void Reset()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-
         // Reset score game
-        ScoreSystem.Score = (int)ResetScore.SCORE;
-
-        // SceneManager.LoadScene("GamePlay");
+        ScoreSystem.score = (int)ResetScore.SCORE;
 
         // Debug.Log("Game Over"); // DEBUG
     }
