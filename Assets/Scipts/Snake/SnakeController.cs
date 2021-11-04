@@ -2,14 +2,16 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class SnakeController : MonoBehaviour
-{
-    public GameObject BodyPrefab;
+{   
+    [Tooltip("Body Snake")] public GameObject BodyPrefab;
 
-    public static List<GameObject> BodyParts;
+    [HideInInspector] public List<GameObject> BodyParts;
     private List<Vector3> PositionHistory;
 
-    public int Gap;
-    public int BodySpeed;
+    public static SnakeController InstanceSnakeController;
+
+    public int gap;
+    public int bodySpeed;
 
     private void Awake()
     {
@@ -21,8 +23,8 @@ public class SnakeController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Gap = 10;
-        BodySpeed = 5;
+        gap = 10;
+        bodySpeed = 5;
     }
 
     // Update is called once per frame
@@ -41,11 +43,11 @@ public class SnakeController : MonoBehaviour
         // Update snake body parts
         foreach (var body in BodyParts)
         {
-            Vector3 Point = PositionHistory[Mathf.Min(index * Gap, PositionHistory.Count - 1)];
+            Vector3 Point = PositionHistory[Mathf.Min(index * gap, PositionHistory.Count - 1)];
 
             Vector3 MoveDirection = (Point - body.transform.position);
 
-            body.transform.position += BodySpeed * Time.deltaTime * MoveDirection;
+            body.transform.position += bodySpeed * Time.deltaTime * MoveDirection;
 
             body.transform.LookAt(Point);
 

@@ -1,16 +1,17 @@
 using UnityEngine;
 
-public enum ResetScore
-{
-    SCORE = 0
-}
-
 public class SnakeCollider : MonoBehaviour
 {
+    private GameObject _SpawnFood;
+
+    private SnakeController _Snake;
+
     // Start is called before the first frame update
     void Start()
     {
+        _SpawnFood = GameObject.Find("Spawn Food");
 
+        _Snake = FindObjectOfType(typeof(SnakeController)) as SnakeController;
     }
 
     // Update is called once per frame
@@ -21,23 +22,44 @@ public class SnakeCollider : MonoBehaviour
 
     private void OnTriggerEnter(Collider collision)
     {
-        if (collision.CompareTag("Player"))
+        if (collision.CompareTag("Player") || collision.CompareTag("Body"))
         {
+            const float timeDelay = 1.0f;
+
+            // Display game over screen
+            Invoke(nameof(DisplayGameOverScreen), timeDelay);
+
+            // Display score game
+            Invoke(nameof(DisplayScoreGame), timeDelay);
+
+            // Display best score player
+            ScoreSystem.InstanceScoreSystem.ScorePlayer();
+
+            // Reset score
+            ScoreSystem.InstanceScoreSystem.ResetScoreGame();
+
+            // Destroy spawn food if snake is dead
+            DestroySpawnFood();
+
             Destroy(collision.gameObject);
-
-            GameOver.InstanceGameover.DisplayGameOver.SetActive(true);
-
-            ScoreSystem.InstanceScoreSystem.Score.SetActive(false);
-
-            SnakeController.BodyParts.Clear();
         }
     }
 
-    private void Reset()
+    private void DisplayGameOverScreen()
     {
-        // Reset score game
-        ScoreSystem.score = (int)ResetScore.SCORE;
+        GameOver.InstanceGameover.DisplayGameOver.SetActive(true);
+    }
 
-        // Debug.Log("Game Over"); // DEBUG
+    private void DisplayScoreGame()
+    {
+        ScoreSystem.InstanceScoreSystem.Score.SetActive(false);
+    }
+
+    private void DestroySpawnFood()
+    {
+        if (_SpawnFood != null)
+        {
+            Destroy(_SpawnFood);
+        }
     }
 }
