@@ -3,7 +3,8 @@ using UnityEngine;
 
 public class SnakeController : MonoBehaviour
 {   
-    [Tooltip("Body Snake")] public GameObject BodyPrefab;
+    [Tooltip("Body Prefab")] public GameObject BodyPrefab;
+    [Tooltip("Snake Dead VFX")] public GameObject[] DeadVFX;
 
     [HideInInspector] public List<GameObject> BodyParts;
     private List<Vector3> PositionHistory;
@@ -23,6 +24,11 @@ public class SnakeController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        if (InstanceSnakeController == null)
+        {
+            InstanceSnakeController = this;
+        }
+
         gap = 10;
         bodySpeed = 5;
     }
@@ -69,5 +75,13 @@ public class SnakeController : MonoBehaviour
         GameObject Body = Instantiate(BodyPrefab);
 
         BodyParts.Add(Body);
+    }
+
+    public void InstantiateDeadVFX()
+    {
+        foreach (var dead in DeadVFX) 
+        {
+            Instantiate(dead, transform.position, Quaternion.identity);
+        }
     }
 }

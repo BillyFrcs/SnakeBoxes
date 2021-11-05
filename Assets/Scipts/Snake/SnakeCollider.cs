@@ -35,6 +35,11 @@ public class SnakeCollider : MonoBehaviour
             // Display best score player
             ScoreSystem.InstanceScoreSystem.ScorePlayer();
 
+            if (SnakeController.InstanceSnakeController != null)
+            {
+                SnakeController.InstanceSnakeController.InstantiateDeadVFX();
+            }
+
             // Destroy spawn food if snake is dead
             DestroySpawnFood();
 

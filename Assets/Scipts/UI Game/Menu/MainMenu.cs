@@ -59,7 +59,7 @@ public class MainMenu : MonoBehaviour
 
         Application.Quit();
 
-        Debug.LogAssertionFormat("Quit game!"); // DEBUG LOG ASSERT
+        // Debug.LogAssertionFormat("Quit game!"); // DEBUG LOG ASSERT
     }
 
     private static void PlayClickSound() => SoundEffectManager.InstanceSoundEffectManager.PlaySoundEffect("Click");
