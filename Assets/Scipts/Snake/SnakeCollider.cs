@@ -35,9 +35,6 @@ public class SnakeCollider : MonoBehaviour
             // Display best score player
             ScoreSystem.InstanceScoreSystem.ScorePlayer();
 
-            // Reset score
-            ScoreSystem.InstanceScoreSystem.ResetScoreGame();
-
             // Destroy spawn food if snake is dead
             DestroySpawnFood();
 
@@ -48,6 +45,9 @@ public class SnakeCollider : MonoBehaviour
     private void DisplayGameOverScreen()
     {
         GameOver.InstanceGameover.DisplayGameOver.SetActive(true);
+
+        // Reset score
+        ScoreSystem.InstanceScoreSystem.ResetScoreGame();
     }
 
     private void DisplayScoreGame()

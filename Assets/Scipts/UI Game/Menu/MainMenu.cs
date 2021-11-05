@@ -4,14 +4,22 @@ public class MainMenu : MonoBehaviour
 {
     [SerializeField] private GameObject _Score;
 
-    public GameObject MainMenuGame;
+    [Tooltip("Main Menu")]public GameObject MainMenuGame;
+    [HideInInspector] public GameObject Footer; 
 
-    public static MainMenu InstaceMainMenu;
+    public static MainMenu InstanceMainMenu;
 
     // Start is called before the first frame update
     void Start()
     {
         MainMenuGame = GameObject.Find("Main Menu");
+
+        Footer = GameObject.Find("Bilix Games");
+
+        if (InstanceMainMenu == null)
+        {
+            InstanceMainMenu = this;
+        }
     }
 
     // Update is called once per frame
@@ -30,6 +38,10 @@ public class MainMenu : MonoBehaviour
     private void StartGamePlay()
     {
         PlayClickSound();
+
+        UIAnimation.InstanceUIAnimation.PlayButtonAnimation();
+
+        Footer.SetActive(false);
 
         SpawnSnake.InstanceSpawnSnake.InstantiateSnake();
 

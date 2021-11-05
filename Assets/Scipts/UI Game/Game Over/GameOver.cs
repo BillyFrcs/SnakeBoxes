@@ -36,11 +36,15 @@ public class GameOver : MonoBehaviour
 
         SpawnSnake.InstanceSpawnSnake.InstantiateSnake();
 
+        MainMenu.InstanceMainMenu.Footer.SetActive(true);
+
         ScoreSystem.InstanceScoreSystem.Score.SetActive(true);
     }
 
     public void Exit()
     {
+        PlayClickSound();
+
         DisplayGameOver?.SetActive(false);
 
         _MainMenu?.SetActive(true);
