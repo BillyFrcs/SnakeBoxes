@@ -55,10 +55,10 @@ public class MainMenu : MonoBehaviour
 
     public void QuitGame()
     {
-        PlayClickSound();
+        PlayClickSound();  
 
         Application.Quit();
-
+                            
         // Debug.LogAssertionFormat("Quit game!"); // DEBUG LOG ASSERT
     }
 
