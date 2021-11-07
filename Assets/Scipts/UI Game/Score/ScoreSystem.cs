@@ -64,5 +64,7 @@ public class ScoreSystem : MonoBehaviour
         PlayerPrefs.DeleteKey("Best Score");
 
         _BestScore.text = "Your Best Score: " + (int)ResetScore.SCORE;
+
+        SoundEffectManager.InstanceSoundEffectManager.PlaySoundEffect("Click");
     }
 }
