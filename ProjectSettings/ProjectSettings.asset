@@ -673,7 +673,7 @@ PlayerSettings:
   cloudServicesEnabled:
     Analytics: 1
     Build: 1
-    Collab: 0
+    Collab: 1
     Game Performance: 1
     Purchasing: 1
     UDP: 0
@@ -692,7 +692,7 @@ PlayerSettings:
     m_VersionName: 
   apiCompatibilityLevel: 6
   activeInputHandler: 0
-  cloudProjectId: 747301ba-10e5-4820-89a1-689e03fd2707
+  cloudProjectId: ab2c3f8a-07bd-42a7-b8ab-b7ecaa6ac48f
   framebufferDepthMemorylessMode: 0
   qualitySettingsNames: []
   projectName: Snake Boxes
