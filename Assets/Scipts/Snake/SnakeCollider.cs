@@ -6,12 +6,19 @@ public class SnakeCollider : MonoBehaviour
 
     private SnakeController _Snake;
 
+    public static SnakeCollider InstanceSnakeCollider;
+
     // Start is called before the first frame update
     void Start()
     {
         _SpawnFood = GameObject.Find("Spawn Food");
 
         _Snake = FindObjectOfType(typeof(SnakeController)) as SnakeController;
+
+        if (InstanceSnakeCollider == null)
+        {
+            InstanceSnakeCollider = this;
+        }
     }
 
     // Update is called once per frame
@@ -40,10 +47,10 @@ public class SnakeCollider : MonoBehaviour
                 SnakeController.InstanceSnakeController.InstantiateDeadVFX();
             }
 
+            Destroy(collision.gameObject);
+
             // Destroy spawn food if snake is dead
             DestroySpawnFood();
-
-            Destroy(collision.gameObject);
         }
     }
 

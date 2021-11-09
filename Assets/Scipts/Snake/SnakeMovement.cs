@@ -5,12 +5,15 @@ public class SnakeMovement : MonoBehaviour
     public float SnakeSpeed;
     public float SteerSpeed;
 
+    public static SnakeMovement InstanceSnakeMovement;
+
     // Start is called before the first frame update
     void Start()
     {
-        SnakeSpeed = 5.0f;
-
-        SteerSpeed = 180.0f;
+        if (InstanceSnakeMovement != null)
+        {
+            InstanceSnakeMovement = this;
+        }
     }
 
     // Update is called once per frame

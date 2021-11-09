@@ -11,14 +11,18 @@ public class SnakeController : MonoBehaviour
 
     public static SnakeController InstanceSnakeController;
 
+    private SnakeMovement _Movement;
+
     public int gap;
-    public int bodySpeed;
+    public float bodySpeed;
 
     private void Awake()
     {
         BodyParts = new List<GameObject>();
 
         PositionHistory = new List<Vector3>();
+
+        _Movement = FindObjectOfType(typeof(SnakeMovement)) as SnakeMovement;  
     }
 
     // Start is called before the first frame update
@@ -28,9 +32,6 @@ public class SnakeController : MonoBehaviour
         {
             InstanceSnakeController = this;
         }
-
-        gap = 10;
-        bodySpeed = 5;
     }
 
     // Update is called once per frame
@@ -72,9 +73,36 @@ public class SnakeController : MonoBehaviour
 
     private void GrowSnake()
     {
-        GameObject Body = Instantiate(BodyPrefab);
+        GameObject BodySnake = Instantiate(BodyPrefab);
 
-        BodyParts.Add(Body);
+        BodyParts.Add(BodySnake);
+
+        const float speed = 6.5f;
+
+        const float newSpeed = 7.0f;
+
+        const float maxSpeed = 8.0f;
+
+        if (BodyParts.Count >= 5)
+        {
+            _Movement.SnakeSpeed = speed;
+
+            bodySpeed = speed;
+
+            if (BodyParts.Count >= 50)
+            {
+                _Movement.SnakeSpeed = newSpeed;
+
+                bodySpeed = newSpeed;
+
+                if (BodyParts.Count >= 90)
+                {
+                    _Movement.SnakeSpeed = maxSpeed;
+
+                    bodySpeed = maxSpeed;
+                }
+            }
+        }
     }
 
     public void InstantiateDeadVFX()

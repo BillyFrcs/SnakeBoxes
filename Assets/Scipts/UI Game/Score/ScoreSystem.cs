@@ -16,7 +16,7 @@ public class ScoreSystem : MonoBehaviour
     [SerializeField] private TextMeshProUGUI _BestScore;
     private int _bestScore = 0;
 
-    public GameObject Score;
+    [Tooltip("Score Reference")] public GameObject Score;
 
     public static ScoreSystem InstanceScoreSystem;
 
@@ -50,6 +50,8 @@ public class ScoreSystem : MonoBehaviour
             PlayerPrefs.SetInt("Best Score", score);
 
             _BestScore.text = "Your Best Score: " + score.ToString();
+
+            // Debug.Log("Score player"); // DEBUG
         }
     }
 

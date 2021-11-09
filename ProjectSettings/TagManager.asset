@@ -9,6 +9,8 @@ TagManager:
   - Obstacle
   - Sides
   - Body
+  - Blood
+  - Head
   layers:
   - Default
   - TransparentFX
