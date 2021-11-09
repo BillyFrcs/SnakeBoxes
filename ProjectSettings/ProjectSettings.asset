@@ -671,14 +671,14 @@ PlayerSettings:
   XboxOneOverrideIdentityPublisher: 
   vrEditorSettings: {}
   cloudServicesEnabled:
-    Analytics: 0
-    Build: 0
+    Analytics: 1
+    Build: 1
     Collab: 0
-    Game Performance: 0
-    Purchasing: 0
+    Game Performance: 1
+    Purchasing: 1
     UDP: 0
     UNet: 1
-    Unity Ads: 0
+    Unity Ads: 1
   luminIcon:
     m_Name: 
     m_ModelFolderPath: 
