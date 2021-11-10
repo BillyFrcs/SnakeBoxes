@@ -42,17 +42,17 @@ public class SnakeController : MonoBehaviour
 
     private void SnakeControl()
     {
-        // Store position history
-        PositionHistory.Insert(0, transform.position);
-
         int index = 0;
+
+        // Store position history
+        PositionHistory.Insert(index, transform.position);
 
         // Update snake body parts
         foreach (var body in BodyParts)
         {
             Vector3 Point = PositionHistory[Mathf.Min(index * gap, PositionHistory.Count - 1)];
 
-            Vector3 MoveDirection = (Point - body.transform.position);
+            Vector3 MoveDirection = Point - body.transform.position;
 
             body.transform.position += bodySpeed * Time.deltaTime * MoveDirection;
 
@@ -83,6 +83,7 @@ public class SnakeController : MonoBehaviour
 
         const float maxSpeed = 8.0f;
 
+        // Increase snake movement speed
         if (BodyParts.Count >= 5)
         {
             _Movement.SnakeSpeed = speed;

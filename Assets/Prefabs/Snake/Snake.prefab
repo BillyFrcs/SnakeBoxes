@@ -147,6 +147,7 @@ MonoBehaviour:
   DeadVFX:
   - {fileID: 2103835855864345251, guid: f243ae1bb15465e48a1b48bbfe26aaf0, type: 3}
   BodyParts: []
+  _GrowBodyPosition: {fileID: 0}
   gap: 10
   bodySpeed: 6
 --- !u!1 &835906659779122417
