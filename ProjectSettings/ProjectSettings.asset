@@ -675,10 +675,10 @@ PlayerSettings:
     Build: 1
     Collab: 1
     Game Performance: 1
-    Purchasing: 1
+    Purchasing: 0
     UDP: 0
     UNet: 1
-    Unity Ads: 1
+    Unity Ads: 0
   luminIcon:
     m_Name: 
     m_ModelFolderPath: 
@@ -692,7 +692,7 @@ PlayerSettings:
     m_VersionName: 
   apiCompatibilityLevel: 6
   activeInputHandler: 0
-  cloudProjectId: ab2c3f8a-07bd-42a7-b8ab-b7ecaa6ac48f
+  cloudProjectId: 85d4bfaa-7432-44de-bcfb-52c00a5d42ae
   framebufferDepthMemorylessMode: 0
   qualitySettingsNames: []
   projectName: Snake Boxes
