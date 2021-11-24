@@ -4,8 +4,8 @@ public class MainMenu : MonoBehaviour
 {
     [SerializeField] private GameObject _Score;
 
-    [Tooltip("Main Menu")]public GameObject MainMenuGame;
-    [HideInInspector] public GameObject Footer; 
+    [Tooltip("Main Menu")] public GameObject MainMenuGame;
+    [HideInInspector] public GameObject Footer;
 
     public static MainMenu InstanceMainMenu;
 
@@ -14,7 +14,7 @@ public class MainMenu : MonoBehaviour
     {
         MainMenuGame = GameObject.Find("Main Menu");
 
-        Footer = GameObject.Find("Bilix Games");
+        Footer = GameObject.Find("Credits");
 
         if (InstanceMainMenu == null)
         {
@@ -55,10 +55,10 @@ public class MainMenu : MonoBehaviour
 
     public void QuitGame()
     {
-        PlayClickSound();  
+        PlayClickSound();
 
         Application.Quit();
-                            
+
         // Debug.LogAssertionFormat("Quit game!"); // DEBUG LOG ASSERT
     }
 
