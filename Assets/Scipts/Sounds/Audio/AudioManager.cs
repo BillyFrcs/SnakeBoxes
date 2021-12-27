@@ -1,34 +1,37 @@
 using UnityEngine;
 
-public class AudioManager : MonoBehaviour
+namespace Sounds
 {
-    [SerializeField] private AudioSource _AudioGame;
-
-    public static AudioManager InstanceAudioManager;
-
-    private void Awake()
+    public class AudioManager : MonoBehaviour
     {
-        if (InstanceAudioManager != null)
+        [SerializeField] private AudioSource _AudioGame;
+
+        public static AudioManager InstanceAudioManager;
+
+        private void Awake()
         {
-            Destroy(gameObject);
+            if (InstanceAudioManager != null)
+            {
+                Destroy(gameObject);
+            }
+            else
+            {
+                InstanceAudioManager = this;
+
+                DontDestroyOnLoad(transform.gameObject);
+            }
         }
-        else
+
+        // Start is called before the first frame update
+        void Start()
         {
-            InstanceAudioManager = this;
 
-            DontDestroyOnLoad(transform.gameObject);
         }
-    }
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+        // Update is called once per frame
+        void Update()
+        {
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+        }
     }
 }

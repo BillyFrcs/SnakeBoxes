@@ -1,56 +1,60 @@
 using UnityEngine;
+using UIGame;
 
-public class BodySnake : MonoBehaviour
+namespace Player
 {
-    private GameObject _SnakeObject;
-
-    private ScoreSystem _ScoreSystem;
-
-    // Start is called before the first frame update
-    void Start()
+    public class BodySnake : MonoBehaviour
     {
-        _SnakeObject = GameObject.FindGameObjectWithTag("Player");
+        private GameObject _SnakeObject;
 
-        _ScoreSystem = FindObjectOfType(typeof(ScoreSystem)) as ScoreSystem;
-    }
+        private ScoreSystem _ScoreSystem;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.gameObject.CompareTag("Body"))
+        // Start is called before the first frame update
+        void Start()
         {
-            if (SnakeController.InstanceSnakeController != null)
-            {
-                SnakeController.InstanceSnakeController.InstantiateDeadVFX();
-            }
+            _SnakeObject = GameObject.FindGameObjectWithTag("Player");
 
-            _ScoreSystem.ScorePlayer();
-
-            DisplayGameOverScreen();
-
-            DisplayScoreGame();
-
-            Destroy(_SnakeObject);
-
-            // Debug.LogAssertion("Game Over"); // DEBUG ASSERT
+            _ScoreSystem = FindObjectOfType(typeof(ScoreSystem)) as ScoreSystem;
         }
-    }
 
-    private void DisplayScoreGame()
-    {
-        ScoreSystem.InstanceScoreSystem.Score.SetActive(false);
-    }
+        // Update is called once per frame
+        void Update()
+        {
 
-    private void DisplayGameOverScreen()
-    {
-        GameOver.InstanceGameover.DisplayGameOver.SetActive(true);
+        }
 
-        // Reset score
-        ScoreSystem.InstanceScoreSystem.ResetScoreGame();
+        private void OnTriggerEnter(Collider other)
+        {
+            if (other.gameObject.CompareTag("Body"))
+            {
+                if (SnakeController.InstanceSnakeController != null)
+                {
+                    SnakeController.InstanceSnakeController.InstantiateDeadVFX();
+                }
+
+                _ScoreSystem.ScorePlayer();
+
+                DisplayGameOverScreen();
+
+                DisplayScoreGame();
+
+                Destroy(_SnakeObject);
+
+                // Debug.LogAssertion("Game Over"); // DEBUG ASSERT
+            }
+        }
+
+        private void DisplayScoreGame()
+        {
+            ScoreSystem.InstanceScoreSystem.Score.SetActive(false);
+        }
+
+        private void DisplayGameOverScreen()
+        {
+            GameOver.InstanceGameover.DisplayGameOver.SetActive(true);
+
+            // Reset score
+            ScoreSystem.InstanceScoreSystem.ResetScoreGame();
+        }
     }
 }

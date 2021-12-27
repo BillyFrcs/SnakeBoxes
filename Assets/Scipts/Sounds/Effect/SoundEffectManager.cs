@@ -1,73 +1,76 @@
 using UnityEngine;
 using UnityEngine.Audio;
 
-[System.Serializable]
-public class Sound
+namespace Sounds
 {
-	public string name;
-
-	public AudioClip Clip;
-	public AudioMixerGroup Mixer;
-
-	[Range(0f, 1f)] public float volume = 1f;
-
-	[Range(-3f, 3f)] public float pitch = 1f;
-
-	public bool isLoop = false;
-
-	[HideInInspector] public AudioSource SoundEffectsSource;
-}
-
-public class SoundEffectManager : MonoBehaviour
-{
-
-	public static SoundEffectManager InstanceSoundEffectManager;
-
-	public Sound[] SoundEffects;
-
-	private void Awake()
+	[System.Serializable]
+	public class Sound
 	{
-		InstanceSoundEffectManager = this;
+		public string name;
 
-		foreach (Sound SoundEffect in SoundEffects)
+		public AudioClip Clip;
+		public AudioMixerGroup Mixer;
+
+		[Range(0f, 1f)] public float volume = 1f;
+
+		[Range(-3f, 3f)] public float pitch = 1f;
+
+		public bool isLoop = false;
+
+		[HideInInspector] public AudioSource SoundEffectsSource;
+	}
+
+	public class SoundEffectManager : MonoBehaviour
+	{
+
+		public static SoundEffectManager InstanceSoundEffectManager;
+
+		public Sound[] SoundEffects;
+
+		private void Awake()
 		{
-			SoundEffect.SoundEffectsSource = gameObject.AddComponent<AudioSource>();
+			InstanceSoundEffectManager = this;
 
-			SoundEffect.SoundEffectsSource.clip = SoundEffect.Clip;
+			foreach (Sound SoundEffect in SoundEffects)
+			{
+				SoundEffect.SoundEffectsSource = gameObject.AddComponent<AudioSource>();
 
-			SoundEffect.SoundEffectsSource.outputAudioMixerGroup = SoundEffect.Mixer;
+				SoundEffect.SoundEffectsSource.clip = SoundEffect.Clip;
 
-			SoundEffect.SoundEffectsSource.volume = SoundEffect.volume;
+				SoundEffect.SoundEffectsSource.outputAudioMixerGroup = SoundEffect.Mixer;
 
-			SoundEffect.SoundEffectsSource.pitch = SoundEffect.pitch;
+				SoundEffect.SoundEffectsSource.volume = SoundEffect.volume;
 
-			SoundEffect.SoundEffectsSource.loop = SoundEffect.isLoop;
+				SoundEffect.SoundEffectsSource.pitch = SoundEffect.pitch;
+
+				SoundEffect.SoundEffectsSource.loop = SoundEffect.isLoop;
+			}
 		}
-	}
 
-	// Start is called before the first frame update
-	void Start()
-	{
+		// Start is called before the first frame update
+		void Start()
+		{
 
-	}
+		}
 
-	// Update is called once per frame
-	void Update()
-	{
+		// Update is called once per frame
+		void Update()
+		{
 
-	}
+		}
 
-	public void PlaySoundEffect(string sound)
-	{
-		Sound SoundEffect = System.Array.Find(SoundEffects, item => item.name == sound);
+		public void PlaySoundEffect(string sound)
+		{
+			Sound SoundEffect = System.Array.Find(SoundEffects, item => item.name == sound);
 
-		SoundEffect.SoundEffectsSource.Play();
-	}
+			SoundEffect.SoundEffectsSource.Play();
+		}
 
-	public void Stop(string sound)
-	{
-		Sound SoundEffect = System.Array.Find(SoundEffects, item => item.name == sound);
+		public void Stop(string sound)
+		{
+			Sound SoundEffect = System.Array.Find(SoundEffects, item => item.name == sound);
 
-		SoundEffect.SoundEffectsSource.Stop();
+			SoundEffect.SoundEffectsSource.Stop();
+		}
 	}
 }

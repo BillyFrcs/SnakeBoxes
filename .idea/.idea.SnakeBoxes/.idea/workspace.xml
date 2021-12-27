@@ -1,7 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="6c06cc17-401e-4fb2-9c54-9b162f711896" name="Changes" comment="" />
+    <list default="true" id="6c06cc17-401e-4fb2-9c54-9b162f711896" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.SnakeBoxes/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SnakeBoxes/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scipts/Food/CollectFood.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scipts/Food/CollectFood.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scipts/Food/DeactivatedFood.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scipts/Food/DeactivatedFood.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scipts/Food/SpawnFood.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scipts/Food/SpawnFood.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scipts/Snake/BodySnake.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scipts/Snake/BodySnake.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scipts/Snake/SnakeCollider.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scipts/Snake/SnakeCollider.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scipts/Snake/SnakeController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scipts/Snake/SnakeController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scipts/Snake/SnakeMovement.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scipts/Snake/SnakeMovement.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scipts/Snake/SpawnSnake.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scipts/Snake/SpawnSnake.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scipts/Sounds/Audio/AudioManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scipts/Sounds/Audio/AudioManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scipts/Sounds/Effect/SoundEffectManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scipts/Sounds/Effect/SoundEffectManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scipts/UI Game/Animations/UIAnimation.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scipts/UI Game/Animations/UIAnimation.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scipts/UI Game/Game Over/GameOver.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scipts/UI Game/Game Over/GameOver.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scipts/UI Game/Menu/MainMenu.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scipts/UI Game/Menu/MainMenu.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scipts/UI Game/Score/ScoreSystem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scipts/UI Game/Score/ScoreSystem.cs" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -16,6 +32,8 @@
   <component name="ProjectId" id="22AwA2rt8F8hW3bNO7nzbwaJ2gP" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
+    <option name="autoscrollFromSource" value="true" />
+    <option name="autoscrollToSource" value="true" />
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
@@ -59,6 +77,7 @@
       <option name="presentableId" value="Default" />
       <updated>1639293563033</updated>
       <workItem from="1639293591919" duration="110000" />
+      <workItem from="1640615558851" duration="374000" />
     </task>
     <servers />
   </component>

@@ -1,116 +1,119 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SnakeController : MonoBehaviour
-{   
-    [Tooltip("Body Prefab")] public GameObject BodyPrefab;
-    [Tooltip("Snake Dead VFX")] public GameObject[] DeadVFX;
-
-    [HideInInspector] public List<GameObject> BodyParts;
-    private List<Vector3> PositionHistory;
-
-    public static SnakeController InstanceSnakeController;
-
-    private SnakeMovement _Movement;
-
-    public int gap;
-    public float bodySpeed;
-
-    private void Awake()
+namespace Player
+{
+    public class SnakeController : MonoBehaviour
     {
-        BodyParts = new List<GameObject>();
+        [Tooltip("Body Prefab")] public GameObject BodyPrefab;
+        [Tooltip("Snake Dead VFX")] public GameObject[] DeadVFX;
 
-        PositionHistory = new List<Vector3>();
+        [HideInInspector] public List<GameObject> BodyParts;
+        private List<Vector3> PositionHistory;
 
-        _Movement = FindObjectOfType(typeof(SnakeMovement)) as SnakeMovement;  
-    }
+        public static SnakeController InstanceSnakeController;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        if (InstanceSnakeController == null)
+        private SnakeMovement _Movement;
+
+        public int gap;
+        public float bodySpeed;
+
+        private void Awake()
         {
-            InstanceSnakeController = this;
+            BodyParts = new List<GameObject>();
+
+            PositionHistory = new List<Vector3>();
+
+            _Movement = FindObjectOfType(typeof(SnakeMovement)) as SnakeMovement;
         }
-    }
 
-    // Update is called once per frame
-    void Update()
-    {
-        SnakeControl();
-    }
-
-    private void SnakeControl()
-    {
-        int index = 0;
-
-        // Store position history
-        PositionHistory.Insert(index, transform.position);
-
-        // Update snake body parts
-        foreach (var body in BodyParts)
+        // Start is called before the first frame update
+        void Start()
         {
-            Vector3 Point = PositionHistory[Mathf.Min(index * gap, PositionHistory.Count - 1)];
-
-            Vector3 MoveDirection = Point - body.transform.position;
-
-            body.transform.position += bodySpeed * Time.deltaTime * MoveDirection;
-
-            body.transform.LookAt(Point);
-
-            index++;
-        }
-    }
-
-    private void OnTriggerEnter(Collider other)
-    {
-        // Add body parts when snake eat food
-        if (other.gameObject.CompareTag("Food"))
-        {
-            GrowSnake();
-        }
-    }
-
-    private void GrowSnake()
-    {
-        GameObject BodySnake = Instantiate(BodyPrefab);
-
-        BodyParts.Add(BodySnake);
-
-        const float speed = 6.5f;
-
-        const float newSpeed = 7.0f;
-
-        const float maxSpeed = 8.0f;
-
-        // Increase snake movement speed
-        if (BodyParts.Count >= 5)
-        {
-            _Movement.SnakeSpeed = speed;
-
-            bodySpeed = speed;
-
-            if (BodyParts.Count >= 50)
+            if (InstanceSnakeController == null)
             {
-                _Movement.SnakeSpeed = newSpeed;
+                InstanceSnakeController = this;
+            }
+        }
 
-                bodySpeed = newSpeed;
+        // Update is called once per frame
+        void Update()
+        {
+            SnakeControl();
+        }
 
-                if (BodyParts.Count >= 90)
+        private void SnakeControl()
+        {
+            int index = 0;
+
+            // Store position history
+            PositionHistory.Insert(index, transform.position);
+
+            // Update snake body parts
+            foreach (var body in BodyParts)
+            {
+                Vector3 Point = PositionHistory[Mathf.Min(index * gap, PositionHistory.Count - 1)];
+
+                Vector3 MoveDirection = Point - body.transform.position;
+
+                body.transform.position += bodySpeed * Time.deltaTime * MoveDirection;
+
+                body.transform.LookAt(Point);
+
+                index++;
+            }
+        }
+
+        private void OnTriggerEnter(Collider other)
+        {
+            // Add body parts when snake eat food
+            if (other.gameObject.CompareTag("Food"))
+            {
+                GrowSnake();
+            }
+        }
+
+        private void GrowSnake()
+        {
+            GameObject BodySnake = Instantiate(BodyPrefab);
+
+            BodyParts.Add(BodySnake);
+
+            const float speed = 6.5f;
+
+            const float newSpeed = 7.0f;
+
+            const float maxSpeed = 8.0f;
+
+            // Increase snake movement speed
+            if (BodyParts.Count >= 5)
+            {
+                _Movement.SnakeSpeed = speed;
+
+                bodySpeed = speed;
+
+                if (BodyParts.Count >= 50)
                 {
-                    _Movement.SnakeSpeed = maxSpeed;
+                    _Movement.SnakeSpeed = newSpeed;
 
-                    bodySpeed = maxSpeed;
+                    bodySpeed = newSpeed;
+
+                    if (BodyParts.Count >= 90)
+                    {
+                        _Movement.SnakeSpeed = maxSpeed;
+
+                        bodySpeed = maxSpeed;
+                    }
                 }
             }
         }
-    }
 
-    public void InstantiateDeadVFX()
-    {
-        foreach (var dead in DeadVFX) 
+        public void InstantiateDeadVFX()
         {
-            Instantiate(dead, transform.position, Quaternion.identity);
+            foreach (var dead in DeadVFX)
+            {
+                Instantiate(dead, transform.position, Quaternion.identity);
+            }
         }
     }
 }

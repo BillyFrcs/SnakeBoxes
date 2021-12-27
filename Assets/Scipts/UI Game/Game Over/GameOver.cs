@@ -1,57 +1,62 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using Sounds;
+using Player;
 
-public class GameOver : MonoBehaviour
+namespace UIGame
 {
-    public GameObject DisplayGameOver;
-
-    [SerializeField] private GameObject _MainMenu;
-
-    public static GameOver InstanceGameover;
-
-    // Start is called before the first frame update
-    void Start()
+    public class GameOver : MonoBehaviour
     {
-        if (InstanceGameover == null)
+        public GameObject DisplayGameOver;
+
+        [SerializeField] private GameObject _MainMenu;
+
+        public static GameOver InstanceGameover;
+
+        // Start is called before the first frame update
+        void Start()
         {
-            InstanceGameover = this;
+            if (InstanceGameover == null)
+            {
+                InstanceGameover = this;
+            }
         }
-    }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+        // Update is called once per frame
+        void Update()
+        {
 
-    public void TryAgain()
-    {
-        PlayClickSound();
+        }
 
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        public void TryAgain()
+        {
+            PlayClickSound();
 
-        DisplayGameOver?.SetActive(false);
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
 
-        _MainMenu?.SetActive(false);
+            DisplayGameOver?.SetActive(false);
 
-        SpawnSnake.InstanceSpawnSnake.InstantiateSnake();
+            _MainMenu?.SetActive(false);
 
-        MainMenu.InstanceMainMenu.Footer.SetActive(true);
+            SpawnSnake.InstanceSpawnSnake.InstantiateSnake();
 
-        ScoreSystem.InstanceScoreSystem.Score.SetActive(true);
-    }
+            MainMenu.InstanceMainMenu.Footer.SetActive(true);
 
-    public void Exit()
-    {
-        PlayClickSound();
+            ScoreSystem.InstanceScoreSystem.Score.SetActive(true);
+        }
 
-        DisplayGameOver?.SetActive(false);
+        public void Exit()
+        {
+            PlayClickSound();
 
-        _MainMenu?.SetActive(true);
-    }
+            DisplayGameOver?.SetActive(false);
 
-    private static void PlayClickSound()
-    {
-        SoundEffectManager.InstanceSoundEffectManager.PlaySoundEffect("Click");
+            _MainMenu?.SetActive(true);
+        }
+
+        private static void PlayClickSound()
+        {
+            SoundEffectManager.InstanceSoundEffectManager.PlaySoundEffect("Click");
+        }
     }
 }

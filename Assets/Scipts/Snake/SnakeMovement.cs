@@ -1,34 +1,37 @@
 using UnityEngine;
 
-public class SnakeMovement : MonoBehaviour
+namespace Player
 {
-    public float SnakeSpeed;
-    public float SteerSpeed;
-
-    public static SnakeMovement InstanceSnakeMovement;
-
-    // Start is called before the first frame update
-    void Start()
+    public class SnakeMovement : MonoBehaviour
     {
-        if (InstanceSnakeMovement != null)
+        public float SnakeSpeed;
+        public float SteerSpeed;
+
+        public static SnakeMovement InstanceSnakeMovement;
+
+        // Start is called before the first frame update
+        void Start()
         {
-            InstanceSnakeMovement = this;
+            if (InstanceSnakeMovement != null)
+            {
+                InstanceSnakeMovement = this;
+            }
         }
-    }
 
-    // Update is called once per frame
-    void Update()
-    {
-        SnakeTranform();
-    }
+        // Update is called once per frame
+        void Update()
+        {
+            SnakeTranform();
+        }
 
-    private void SnakeTranform()
-    {
-        // Move snake forward
-        transform.position += transform.forward * SnakeSpeed * Time.deltaTime;
+        private void SnakeTranform()
+        {
+            // Move snake forward
+            transform.position += transform.forward * SnakeSpeed * Time.deltaTime;
 
-        float steerDirection = Input.GetAxis("Horizontal");
+            float steerDirection = Input.GetAxis("Horizontal");
 
-        transform.Rotate(Vector3.up * steerDirection * SteerSpeed * Time.deltaTime);
+            transform.Rotate(Vector3.up * steerDirection * SteerSpeed * Time.deltaTime);
+        }
     }
 }

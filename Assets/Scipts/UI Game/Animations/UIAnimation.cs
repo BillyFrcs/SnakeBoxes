@@ -1,33 +1,36 @@
 using UnityEngine;
 
-public class UIAnimation : MonoBehaviour
+namespace UIGame
 {
-    public static UIAnimation InstanceUIAnimation;
-
-    private Animator _UIAnimator;
-
-    private void Awake()
+    public class UIAnimation : MonoBehaviour
     {
-        _UIAnimator = GetComponent<Animator>();
-    }
+        public static UIAnimation InstanceUIAnimation;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        if (InstanceUIAnimation == null)
+        private Animator _UIAnimator;
+
+        private void Awake()
         {
-            InstanceUIAnimation = this;
+            _UIAnimator = GetComponent<Animator>();
         }
-    }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+        // Start is called before the first frame update
+        void Start()
+        {
+            if (InstanceUIAnimation == null)
+            {
+                InstanceUIAnimation = this;
+            }
+        }
 
-    public void PlayButtonAnimation()
-    {
-        _UIAnimator.SetTrigger("Play");
+        // Update is called once per frame
+        void Update()
+        {
+
+        }
+
+        public void PlayButtonAnimation()
+        {
+            _UIAnimator.SetTrigger("Play");
+        }
     }
 }
