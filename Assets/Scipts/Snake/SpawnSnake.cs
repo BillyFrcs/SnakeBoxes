@@ -15,18 +15,12 @@ namespace Player
         public static SpawnSnake InstanceSpawnSnake;
 
         // Start is called before the first frame update
-        void Start()
+        private void Start()
         {
             if (InstanceSpawnSnake == null)
             {
                 InstanceSpawnSnake = this;
             }
-        }
-
-        // Update is called once per frame
-        void Update()
-        {
-
         }
 
         public void InstantiateSnake()

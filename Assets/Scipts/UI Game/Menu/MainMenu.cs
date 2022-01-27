@@ -14,7 +14,7 @@ namespace UIGame
         public static MainMenu InstanceMainMenu;
 
         // Start is called before the first frame update
-        void Start()
+        private void Start()
         {
             MainMenuGame = GameObject.Find("Main Menu");
 
@@ -24,12 +24,6 @@ namespace UIGame
             {
                 InstanceMainMenu = this;
             }
-        }
-
-        // Update is called once per frame
-        void Update()
-        {
-
         }
 
         public void PlayGame()

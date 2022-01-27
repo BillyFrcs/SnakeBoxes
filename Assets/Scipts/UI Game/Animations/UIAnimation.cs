@@ -14,18 +14,12 @@ namespace UIGame
         }
 
         // Start is called before the first frame update
-        void Start()
+        private void Start()
         {
             if (InstanceUIAnimation == null)
             {
                 InstanceUIAnimation = this;
             }
-        }
-
-        // Update is called once per frame
-        void Update()
-        {
-
         }
 
         public void PlayButtonAnimation()

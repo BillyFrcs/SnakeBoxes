@@ -30,7 +30,7 @@ namespace Food
         }
 
         // Start is called before the first frame update
-        void Start()
+        private void Start()
         {
             _MinX = -6.87f;
             _MaxX = 17.24f;
@@ -42,12 +42,6 @@ namespace Food
 
             // Start spawned food
             Invoke(nameof(StartSpawning), _spawned);
-        }
-
-        // Update is called once per frame
-        void Update()
-        {
-
         }
 
         private void StartSpawning()

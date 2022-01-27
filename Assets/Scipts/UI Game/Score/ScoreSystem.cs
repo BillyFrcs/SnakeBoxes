@@ -34,7 +34,7 @@ namespace UIGame
         }
 
         // Start is called before the first frame update
-        void Start()
+        private void Start()
         {
             _bestScore = PlayerPrefs.GetInt("Best Score", 0);
 
@@ -42,7 +42,7 @@ namespace UIGame
         }
 
         // Update is called once per frame
-        void Update()
+        private void Update()
         {
             // Update collect food score
             _Score.text = "Your Score: " + score.ToString();

@@ -10,7 +10,7 @@ namespace Player
         public static SnakeMovement InstanceSnakeMovement;
 
         // Start is called before the first frame update
-        void Start()
+        private void Start()
         {
             if (InstanceSnakeMovement != null)
             {
@@ -19,7 +19,7 @@ namespace Player
         }
 
         // Update is called once per frame
-        void Update()
+        private void Update()
         {
             SnakeTranform();
         }

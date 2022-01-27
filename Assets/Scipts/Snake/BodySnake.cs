@@ -10,17 +10,11 @@ namespace Player
         private ScoreSystem _ScoreSystem;
 
         // Start is called before the first frame update
-        void Start()
+        private void Start()
         {
             _SnakeObject = GameObject.FindGameObjectWithTag("Player");
 
             _ScoreSystem = FindObjectOfType(typeof(ScoreSystem)) as ScoreSystem;
-        }
-
-        // Update is called once per frame
-        void Update()
-        {
-
         }
 
         private void OnTriggerEnter(Collider other)

@@ -47,18 +47,6 @@ namespace Sounds
 			}
 		}
 
-		// Start is called before the first frame update
-		void Start()
-		{
-
-		}
-
-		// Update is called once per frame
-		void Update()
-		{
-
-		}
-
 		public void PlaySoundEffect(string sound)
 		{
 			Sound SoundEffect = System.Array.Find(SoundEffects, item => item.name == sound);

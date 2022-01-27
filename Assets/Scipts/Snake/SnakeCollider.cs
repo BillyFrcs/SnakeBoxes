@@ -12,7 +12,7 @@ namespace Player
         public static SnakeCollider InstanceSnakeCollider;
 
         // Start is called before the first frame update
-        void Start()
+        private void Start()
         {
             _SpawnFood = GameObject.Find("Spawn Food");
 
@@ -22,12 +22,6 @@ namespace Player
             {
                 InstanceSnakeCollider = this;
             }
-        }
-
-        // Update is called once per frame
-        void Update()
-        {
-
         }
 
         private void OnTriggerEnter(Collider collision)
