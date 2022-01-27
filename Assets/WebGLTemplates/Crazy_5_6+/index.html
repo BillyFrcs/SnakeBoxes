@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>%UNITY_WEB_NAME% | Crazy Games</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+</head>
+
+<body>
+  <script type="text/javascript">
+    var slugify = (text) => {
+      return (text || '')
+        .replace(/&/g, ' and ')
+        .replace(/[^a-zA-Z0-9]/g, ' ')
+        .trim()
+        .replace(/\s+/g, '-')
+        .toLowerCase();
+    }
+    var options = {
+      author: "Unity Developer",
+      gameName: "%UNITY_WEB_NAME%",
+      gameLink: "https://www.crazygames.com/game/your-game-here",
+      gameSlug: slugify("%UNITY_WEB_NAME%"),
+      allowFullscreen: true,
+      locale: "en_US",
+      loader: "5.6.x",
+      loaderOptions: {
+        "moduleJsonUrl": "%UNITY_WEBGL_BUILD_URL%",
+        "unityLoaderUrl": "%UNITY_WEBGL_LOADER_URL%"
+      },
+      category: "UnitySDK",
+      categoryLink: "https://www.crazygames.com",
+	    thumbnail: "https://images.crazygames.com/upcoming.png",
+      gameStatus: "published",
+      dollarRate: 1,
+      sdkDebug: true,
+      forceTestAds: true,
+    };
+
+    window.CrazyGames = {};
+    window.CrazyGames.options = options;
+  </script>
+  <iframe id="unity" allow="autoplay; fullscreen" style="width: 922px; height: 532px;"></iframe>
+  <script type="text/javascript">
+    var iframe = document.getElementById('unity');
+    iframe.setAttribute('src', 'template.html' + window.location.search);
+  </script>
+</body>

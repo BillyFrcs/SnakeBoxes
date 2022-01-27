@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using Sounds;
@@ -22,20 +23,26 @@ namespace UIGame
             }
         }
 
+        public void DisplayGameOverScreen()
+        {
+            DisplayGameOver.SetActive(true);
+            
+            // Reset score
+            ScoreSystem.InstanceScoreSystem.ResetScoreGame();
+        }
+        
         public void TryAgain()
         {
             PlayClickSound();
 
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
 
-            DisplayGameOver?.SetActive(false);
+            DisplayGameOver.SetActive(false);
 
-            _MainMenu?.SetActive(false);
+            _MainMenu.SetActive(false);
 
             SpawnSnake.InstanceSpawnSnake.InstantiateSnake();
-
-            MainMenu.InstanceMainMenu.Footer.SetActive(true);
-
+            
             ScoreSystem.InstanceScoreSystem.Score.SetActive(true);
         }
 
@@ -43,9 +50,9 @@ namespace UIGame
         {
             PlayClickSound();
 
-            DisplayGameOver?.SetActive(false);
+            DisplayGameOver.SetActive(false);
 
-            _MainMenu?.SetActive(true);
+            _MainMenu.SetActive(true);
         }
 
         private static void PlayClickSound()

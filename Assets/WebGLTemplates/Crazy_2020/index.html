@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>{{{ PRODUCT_NAME }}}| Crazy Games</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+</head>
+
+<body>
+  <script type="text/javascript">
+    var slugify = (text) => {
+      return (text || '')
+        .replace(/&/g, ' and ')
+        .replace(/[^a-zA-Z0-9]/g, ' ')
+        .trim()
+        .replace(/\s+/g, '-')
+        .toLowerCase();
+    }
+    var options = {
+      author: "Unity Developer",
+      gameName: "{{{ PRODUCT_NAME }}}",
+      gameSlug: slugify("{{{ PRODUCT_NAME }}}"),
+      gameLink: "https://www.crazygames.com/game/your-game-here",
+      allowFullscreen: true,
+      locale: "en_US",
+      loader: "unity2020",
+      loaderOptions: {
+        unityLoaderUrl: "Build/{{{ LOADER_FILENAME }}}",
+        unityConfigOptions: {
+          "dataUrl": "Build/{{{ DATA_FILENAME }}}",
+          "frameworkUrl": "Build/{{{ FRAMEWORK_FILENAME }}}",
+          "codeUrl": "Build/{{{ CODE_FILENAME }}}",
+#if MEMORY_FILENAME
+          "memoryUrl": "Build/{{{ MEMORY_FILENAME }}}",
+#endif
+#if SYMBOLS_FILENAME
+          "symbolsUrl": "Build/{{{ SYMBOLS_FILENAME }}}",
+#endif
+          "streamingAssetsUrl": "StreamingAssets",
+        }
+      },
+      category: "UnitySDK",
+      categoryLink: "https://www.crazygames.com",
+      thumbnail: "https://images.crazygames.com/upcoming.png",
+      gameStatus: "published",
+      dollarRate: 1,
+      sdkDebug: true,
+      gameLink: 'https://www.crazygames.com/testgame',
+      forceTestAds: true,
+    };
+
+    window.CrazyGames = {};
+    window.CrazyGames.options = options;
+  </script>
+  <iframe id="unity" allow="autoplay; fullscreen" style="width: 922px; height: 532px;"></iframe>
+  <script type="text/javascript">
+    var iframe = document.getElementById('unity');
+    iframe.setAttribute('src', 'template.html' + window.location.search);
+  </script>
+</body>

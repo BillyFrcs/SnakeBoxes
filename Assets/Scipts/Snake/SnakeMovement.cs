@@ -27,7 +27,7 @@ namespace Player
         private void SnakeTranform()
         {
             // Move snake forward
-            transform.position += transform.forward * SnakeSpeed * Time.deltaTime;
+            gameObject.transform.position += transform.forward * SnakeSpeed * Time.deltaTime;
 
             float steerDirection = Input.GetAxis("Horizontal");
 

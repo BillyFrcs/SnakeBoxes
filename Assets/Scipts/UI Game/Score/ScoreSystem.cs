@@ -47,14 +47,19 @@ namespace UIGame
             // Update collect food score
             _Score.text = "Your Score: " + score.ToString();
         }
+        
+        public void DisplayScoreGame()
+        {
+            Score.SetActive(false);
+        }
 
-        public void ScorePlayer()
+        public void BestScorePlayer()
         {
             if (score > PlayerPrefs.GetInt("Best Score", 0))
             {
                 PlayerPrefs.SetInt("Best Score", score);
 
-                _BestScore.text = "Your Best Score: " + score.ToString();
+                _BestScore.text = $"Your Best Score: {score.ToString()}";
 
                 // Debug.Log("Score player"); // DEBUG
             }

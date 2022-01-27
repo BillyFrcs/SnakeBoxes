@@ -1,3 +1,5 @@
+using CameraGame;
+using UIGame;
 using UnityEngine;
 
 namespace Player
@@ -27,8 +29,7 @@ namespace Player
         {
             foreach (GameObject spawn in _SpawnSnake)
             {
-                Instantiate(spawn, new Vector3(Random.Range(_MinX, _MaxX), _YPosition, Random.Range(_MinZ, _MaxZ)),
-                    Quaternion.identity);
+                Instantiate(spawn, new Vector3(Random.Range(_MinX, _MaxX), _YPosition, Random.Range(_MinZ, _MaxZ)), Quaternion.identity);
             }
         }
     }

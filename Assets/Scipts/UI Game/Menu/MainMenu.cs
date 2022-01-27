@@ -1,3 +1,4 @@
+using CameraGame;
 using UnityEngine;
 using Sounds;
 using Player;
@@ -9,17 +10,13 @@ namespace UIGame
         [SerializeField] private GameObject _Score;
 
         [Tooltip("Main Menu")] public GameObject MainMenuGame;
-        [HideInInspector] public GameObject Footer;
+        public GameObject Credits;
 
         public static MainMenu InstanceMainMenu;
 
         // Start is called before the first frame update
         private void Start()
         {
-            MainMenuGame = GameObject.Find("Main Menu");
-
-            Footer = GameObject.Find("Credits");
-
             if (InstanceMainMenu == null)
             {
                 InstanceMainMenu = this;
@@ -36,12 +33,12 @@ namespace UIGame
         private void StartGamePlay()
         {
             PlayClickSound();
-
-            UIAnimation.InstanceUIAnimation.PlayButtonAnimation();
-
-            Footer.SetActive(false);
-
+            
+            Credits.SetActive(false);
+            
             SpawnSnake.InstanceSpawnSnake.InstantiateSnake();
+
+            CameraFollow.InstanceCameraFollow.enabled = true;
 
             _Score.SetActive(true);
         }
