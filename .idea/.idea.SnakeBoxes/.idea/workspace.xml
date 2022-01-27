@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6c06cc17-401e-4fb2-9c54-9b162f711896" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.SnakeBoxes/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SnakeBoxes/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scipts/Food/CollectFood.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scipts/Food/CollectFood.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scipts/Food/DeactivatedFood.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scipts/Food/DeactivatedFood.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scipts/Food/SpawnFood.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scipts/Food/SpawnFood.cs" afterDir="false" />
@@ -78,6 +77,7 @@
       <updated>1639293563033</updated>
       <workItem from="1639293591919" duration="110000" />
       <workItem from="1640615558851" duration="374000" />
+      <workItem from="1643261610137" duration="267000" />
     </task>
     <servers />
   </component>
