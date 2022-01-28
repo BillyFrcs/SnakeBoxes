@@ -14,7 +14,7 @@ namespace Food
 
         private void OnTriggerEnter(Collider other)
         {
-            ScoreSystem.score++;
+            ScoreSystem.InstanceScoreSystem.IncreaseScoreGame++;
 
             Destroy(gameObject);
         }

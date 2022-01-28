@@ -11,15 +11,15 @@ namespace UIGame
 
     public class ScoreSystem : MonoBehaviour
     {
-        [Header("Score Game")] [SerializeField]
-        private TextMeshProUGUI _Score;
+        [Header("Score Game")] 
+        [SerializeField] private TextMeshProUGUI _Score;
 
-        public static int score = 0;
+        private int _score = 0;
 
-        [Header("Best Score")] [SerializeField]
-        private TextMeshProUGUI _BestScore;
+        [Header("Best Score")] 
+        [SerializeField] private TextMeshProUGUI _HighScore;
 
-        private int _bestScore = 0;
+        private int _highScore = 0;
 
         [Tooltip("Score Reference")] public GameObject Score;
 
@@ -36,16 +36,16 @@ namespace UIGame
         // Start is called before the first frame update
         private void Start()
         {
-            _bestScore = PlayerPrefs.GetInt("Best Score", 0);
+            _highScore = PlayerPrefs.GetInt("High Score", 0);
 
-            _BestScore.text = "Your Best Score: " + _bestScore.ToString();
+            _HighScore.text = "Your High Score: " + _highScore.ToString();
         }
 
         // Update is called once per frame
         private void Update()
         {
             // Update collect food score
-            _Score.text = "Your Score: " + score.ToString();
+            _Score.text = "Your Score: " + _score.ToString();
         }
         
         public void DisplayScoreGame()
@@ -53,29 +53,55 @@ namespace UIGame
             Score.SetActive(false);
         }
 
-        public void BestScorePlayer()
+        public void SaveBestScorePlayer()
         {
-            if (score > PlayerPrefs.GetInt("Best Score", 0))
+            LoadBestScoreGame();
+            
+            if (_score > PlayerPrefs.GetInt("High Score", 0))
             {
-                PlayerPrefs.SetInt("Best Score", score);
+                PlayerPrefs.SetInt("High Score", _score);
 
-                _BestScore.text = $"Your Best Score: {score.ToString()}";
+                _HighScore.text = $"Your High Score: {_score.ToString()}";
 
                 // Debug.Log("Score player"); // DEBUG
             }
         }
 
-        public void ResetScoreGame()
+        private void LoadBestScoreGame()
+        {
+            if (PlayerPrefs.HasKey("High Score"))
+            {
+                _highScore = PlayerPrefs.GetInt("High Score", 0);
+                
+                _HighScore.text = $"Your High Score: {_highScore.ToString()}";
+
+                // Debug.Log("Load high score"); // DEBUG
+            }
+        }
+
+        public int IncreaseScoreGame
+        {
+            get
+            {
+                return _score;
+            }
+            set
+            {
+                _score = value;
+            }
+        }
+
+        public int ResetScoreGame()
         {
             // Reset score game
-            score = (int) ResetScore.SCORE;
+            return _score = (int) ResetScore.SCORE;
         }
 
         public void ResetBestScoreGame()
         {
-            PlayerPrefs.DeleteKey("Best Score");
+            PlayerPrefs.DeleteKey("High Score");
 
-            _BestScore.text = "Your Best Score: " + (int) ResetScore.SCORE;
+            _HighScore.text = "Your High Score: " + ResetScoreGame();
 
             SoundEffectManager.InstanceSoundEffectManager.PlaySoundEffect("Click");
         }

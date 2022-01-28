@@ -27,6 +27,9 @@ namespace UIGame
         {
             DisplayGameOver.SetActive(true);
             
+            // Save high score
+            ScoreSystem.InstanceScoreSystem.SaveBestScorePlayer();
+
             // Reset score
             ScoreSystem.InstanceScoreSystem.ResetScoreGame();
         }

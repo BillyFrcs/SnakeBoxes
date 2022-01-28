@@ -28,10 +28,7 @@ namespace Player
                 
                 // Display score game
                 ScoreSystem.InstanceScoreSystem.DisplayScoreGame();
-                    
-                // Display best score player
-                ScoreSystem.InstanceScoreSystem.BestScorePlayer();
-
+                
                 if (SnakeController.InstanceSnakeController != null)
                 {
                     SnakeController.InstanceSnakeController.InstantiateDeadVFX();

@@ -18,12 +18,11 @@ namespace Player
                 }
                 
                 CameraFollow.InstanceCameraFollow.enabled = false;
-
-                ScoreSystem.InstanceScoreSystem.BestScorePlayer();
-
+                
                 // Game over
                 GameOver.InstanceGameover.DisplayGameOverScreen();
-
+                
+                // Display score game
                 ScoreSystem.InstanceScoreSystem.DisplayScoreGame();
 
                 Destroy(_SnakeObject);

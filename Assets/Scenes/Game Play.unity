@@ -427,7 +427,7 @@ GameObject:
   - component: {fileID: 248074104}
   - component: {fileID: 248074103}
   m_Layer: 5
-  m_Name: Best Score Game
+  m_Name: High Score Game
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -472,7 +472,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Your Best Score: 0'
+  m_text: 'Your High Score: 0'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: b5ca9097e5df4b94ca3ac67e689581f7, type: 2}
   m_sharedMaterial: {fileID: 932448710437761250, guid: b5ca9097e5df4b94ca3ac67e689581f7, type: 2}
@@ -7592,7 +7592,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _Score: {fileID: 258047090}
-  _BestScore: {fileID: 248074103}
+  _HighScore: {fileID: 248074103}
   Score: {fileID: 258047088}
 --- !u!114 &1849922930
 MonoBehaviour:
