@@ -4,7 +4,7 @@ on: [push, pull_request]
 
 jobs:
   buildForAllSupportedPlatforms:
-    name: Build for ${{ matrix.targetPlatform }}
+    name: Snake Boxes
     runs-on: ubuntu-latest
     strategy:
       fail-fast: false
