@@ -1,10 +1,10 @@
-name: Snake Boxes
+name: Build project
 
 on: [push, pull_request]
 
 jobs:
   buildForAllSupportedPlatforms:
-    name: Snake Boxes ${{ matrix.targetPlatform }}
+    name: Build for ${{ matrix.targetPlatform }}
     runs-on: ubuntu-latest
     strategy:
       fail-fast: false
@@ -31,5 +31,5 @@ jobs:
           targetPlatform: ${{ matrix.targetPlatform }}
       - uses: actions/upload-artifact@v2
         with:
-          name: Snake Boxes-${{ matrix.targetPlatform }}
+          name: Build-${{ matrix.targetPlatform }}
           path: build/${{ matrix.targetPlatform }}
