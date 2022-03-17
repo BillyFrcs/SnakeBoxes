@@ -342,6 +342,7 @@ MonoBehaviour:
   DeadVFX:
   - {fileID: 2103835855864345251, guid: f243ae1bb15465e48a1b48bbfe26aaf0, type: 3}
   BodyParts: []
+  _SnakeMaterial: {fileID: 2100000, guid: d5da833a4111bb849b3875aae358b376, type: 2}
   gap: 10
   bodySpeed: 6
 --- !u!114 &208055912668798084

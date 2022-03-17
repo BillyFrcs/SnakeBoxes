@@ -6,12 +6,17 @@
   <component name="ChangeListManager">
     <list default="true" id="6c06cc17-401e-4fb2-9c54-9b162f711896" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.SnakeBoxes/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SnakeBoxes/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/Eyes.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/Eyes.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/Floor Shadow.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/Floor Shadow.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/Floor.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/Floor.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/Grass.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/Grass.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/Mouth.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/Mouth.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Materials/Snake.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/Snake.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Snake/Snake.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Snake/Snake.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/VFX/Dead.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/VFX/Dead.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/Game Play.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Game Play.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scipts/Food/CollectFood.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scipts/Food/CollectFood.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scipts/Snake/Collider/BodySnakeCollider.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scipts/Snake/Collider/BodySnakeCollider.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scipts/Snake/Collider/SnakeCollider.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scipts/Snake/Collider/SnakeCollider.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scipts/UI Game/Game Over/GameOver.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scipts/UI Game/Game Over/GameOver.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scipts/UI Game/Score/ScoreSystem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scipts/UI Game/Score/ScoreSystem.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Snake/SnakeController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Snake/SnakeController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Unity Packages/TextMesh Pro/Examples &amp; Extras/Resources/Fonts &amp; Materials/Bangers SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Unity Packages/TextMesh Pro/Examples &amp; Extras/Resources/Fonts &amp; Materials/Bangers SDF.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -93,6 +98,7 @@
       <workItem from="1643266069665" duration="12042000" />
       <workItem from="1643361467333" duration="2449000" />
       <workItem from="1643364011632" duration="1416000" />
+      <workItem from="1647476933926" duration="2871000" />
     </task>
     <servers />
   </component>

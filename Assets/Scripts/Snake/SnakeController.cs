@@ -11,6 +11,8 @@ namespace Player
         [HideInInspector] public List<GameObject> BodyParts;
         private List<Vector3> PositionHistory;
 
+        [SerializeField] private Material _SnakeMaterial;
+
         public static SnakeController InstanceSnakeController;
 
         private SnakeMovement _Movement;
@@ -34,6 +36,8 @@ namespace Player
             {
                 InstanceSnakeController = this;
             }
+
+            _SnakeMaterial.color = Random.ColorHSV(0f, 1f, 1f, 1f, 0.5f, 1f);;
         }
 
         // Update is called once per frame
@@ -113,6 +117,14 @@ namespace Player
             foreach (var dead in DeadVFX)
             {
                 Instantiate(dead, transform.position, Quaternion.identity);
+            }
+        }
+
+        public Color SnakeColor
+        {
+            get
+            {
+                return _SnakeMaterial.color;
             }
         }
     }
