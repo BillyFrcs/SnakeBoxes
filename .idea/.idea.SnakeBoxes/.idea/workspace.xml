@@ -5,7 +5,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6c06cc17-401e-4fb2-9c54-9b162f711896" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.SnakeBoxes/.idea/indexLayout.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/VFX/VFXEffect.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/VFX/VFXEffect.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -90,6 +89,7 @@
       <workItem from="1643364011632" duration="1416000" />
       <workItem from="1647476933926" duration="2871000" />
       <workItem from="1647842267990" duration="22000" />
+      <workItem from="1647842637554" duration="27000" />
     </task>
     <servers />
   </component>
