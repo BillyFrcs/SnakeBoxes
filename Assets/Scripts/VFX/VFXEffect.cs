@@ -14,7 +14,7 @@ namespace VFX
 
             ParticleSystem.MainModule DeadVFX = gameObject.GetComponent<ParticleSystem>().main;
 
-            DeadVFX.startColor = VFXColor;
+            DeadVFX.startColor = VFXColor
         }
     }
 }
