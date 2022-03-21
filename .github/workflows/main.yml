@@ -1,36 +1,41 @@
-name: Snake Boxes
+name: Snake Boxes Test Project
 
 on: [push, pull_request]
 
 jobs:
-  buildForAllSupportedPlatforms:
-    name: Snake Boxes ${{ matrix.targetPlatform }}
+  testAllModes:
+    name: Test in ${{ matrix.testMode }}
     runs-on: ubuntu-latest
     strategy:
       fail-fast: false
       matrix:
-        targetPlatform:
-          - StandaloneWindows64 # Build a Windows 64-bit standalone.
-          - WebGL # WebGL.
+        projectPath:
+          - .
+        testMode:
+          - playmode
+          - editmode
     steps:
       - uses: actions/checkout@v2
         with:
-          fetch-depth: 0
           lfs: true
       - uses: actions/cache@v2
         with:
-          path: Library
-          key: Library-${{ matrix.targetPlatform }}
-          restore-keys: Library-
-      - uses: game-ci/unity-builder@v2
+          path: ${{ matrix.projectPath }}/Library
+          key: Library-${{ matrix.projectPath }}
+          restore-keys: |
+            Library-
+      - uses: game-ci/unity-test-runner@v2
+        id: tests
         env:
-          UNITY_EMAIL: ${{ secrets.UNITY_EMAIL }}
-          UNITY_LICENSE: ${{ secrets.UNITY_LICENSE}}
-          UNITY_PASSWORD: ${{ secrets.UNITY_PASSWORD }}
-          UNITY_SERIAL: ${{ secrets.UNITY_SERIAL }}
+          UNITY_LICENSE: ${{ secrets.UNITY_LICENSE }}
         with:
-          targetPlatform: ${{ matrix.targetPlatform }}
+          projectPath: ${{ matrix.projectPath }}
+          testMode: ${{ matrix.testMode }}
+          artifactsPath: ${{ matrix.testMode }}-artifacts
+          githubToken: ${{ secrets.GITHUB_TOKEN }}
+          checkName: ${{ matrix.testMode }} Test Results
       - uses: actions/upload-artifact@v2
+        if: always()
         with:
-          name: Snake Boxes-${{ matrix.targetPlatform }}
-          path: build/${{ matrix.targetPlatform }}
+          name: Test results for ${{ matrix.testMode }}
+          path: ${{ steps.tests.outputs.artifactsPath }}
