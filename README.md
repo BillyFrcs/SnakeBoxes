@@ -4,10 +4,10 @@
 
 Snake Boxes is a simple 3D Game that Player play as a snake and try to eat all the random food when spawned & Player can get score & high score by eating food.
 
-## Download & Play
+## Download And Play
 
-1. Windows 64 & WebGL [billyfrcs.itch.io/snakeboxes](https://billyfrcs.itch.io/snakeboxes)
+1. Available on Windows 64 & WebGL version, Get the Game from [here](https://billyfrcs.itch.io/snakeboxes)
 
-## Music & Sound Provided by
+## Sound Provided by
 
  - [PlayOnLoop](https://www.playonloop.com/)
