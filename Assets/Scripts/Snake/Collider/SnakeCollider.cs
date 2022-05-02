@@ -1,6 +1,5 @@
 using UnityEngine;
 using UIGame;
-using CameraGame;
 
 namespace Player
 {
@@ -21,8 +20,6 @@ namespace Player
         {
             if (collision.CompareTag("Sides"))
             {
-                CameraFollow.InstanceCameraFollow.enabled = false;
-
                 // Display game over screen
                 GameOver.InstanceGameover.DisplayGameOverScreen();
                 

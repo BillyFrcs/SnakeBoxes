@@ -1,4 +1,3 @@
-using CameraGame;
 using UIGame;
 using UnityEngine;
 

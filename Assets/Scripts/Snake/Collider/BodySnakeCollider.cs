@@ -1,6 +1,5 @@
 using UnityEngine;
 using UIGame;
-using CameraGame;
 
 namespace Player
 {
@@ -16,8 +15,6 @@ namespace Player
                 {
                     SnakeController.InstanceSnakeController.InstantiateDeadVFX();
                 }
-                
-                CameraFollow.InstanceCameraFollow.enabled = false;
                 
                 // Game over
                 GameOver.InstanceGameover.DisplayGameOverScreen();

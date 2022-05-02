@@ -1,4 +1,3 @@
-using CameraGame;
 using UnityEngine;
 using Sounds;
 using Player;
@@ -37,8 +36,6 @@ namespace UIGame
             Credits.SetActive(false);
             
             SpawnSnake.InstanceSpawnSnake.InstantiateSnake();
-
-            CameraFollow.InstanceCameraFollow.enabled = true;
 
             _Score.SetActive(true);
         }
