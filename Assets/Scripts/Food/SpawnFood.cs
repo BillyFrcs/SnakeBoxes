@@ -8,7 +8,7 @@ namespace Food
     {
         public List<GameObject> FoodPrefab = new List<GameObject>();
 
-        private GameObject _SpanwFood;
+        private GameObject _SpawnFood;
 
         public static SpawnFood InstanceSpawnFood;
 
@@ -63,8 +63,7 @@ namespace Food
                 {
                     _randomIndex = Random.Range(0, FoodPrefab.Count);
 
-                    _SpanwFood = Instantiate(FoodPrefab[_randomIndex],
-                        new Vector3(randomAtPositionX, _YPosition, randomAtPositionZ), Quaternion.identity);
+                    _SpawnFood = Instantiate(FoodPrefab[_randomIndex], new Vector3(randomAtPositionX, _YPosition, randomAtPositionZ), Quaternion.identity);
                 }
             }
 
